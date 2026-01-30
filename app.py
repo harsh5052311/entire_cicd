@@ -8,7 +8,7 @@ def animate_text(label, text):
         time.sleep(0.1)
 
 root = tk.Tk()
-root.title("Message Display, Hola Amigo")
+root.title("Message Display, Hola Amigo1")
 root.geometry("400x200")
 
 label = tk.Label(root, text="", font=("Helvetica", 20, "bold"))
