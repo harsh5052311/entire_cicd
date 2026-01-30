@@ -30,7 +30,7 @@ pipeline {
             steps {
                 withCredentials([string(credentialsId: 'kubeconfig-creds', variable: 'KUBECONFIG')]) {
                     sh '''
-                    echo "$KUBECONFIG" > kubeconfig.yaml
+                    echo "$KUBECONFIG_B64" | base64 -d > kubeconfig.yaml
                     kubectl --kubeconfig=kubeconfig.yaml apply -f deployment.yaml
                     kubectl --kubeconfig=kubeconfig.yaml set image deployment/my-python-app my-python-app=${DOCKER_IMAGE}:${BUILD_NUMBER}
                     '''
