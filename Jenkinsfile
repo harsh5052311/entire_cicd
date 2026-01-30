@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        DOCKER_IMAGE = "<harsh5052311/my-python-app"
+        DOCKER_IMAGE = "harsh5052311/my-python-app"
     }
     stages {
         stage('Checkout') {
